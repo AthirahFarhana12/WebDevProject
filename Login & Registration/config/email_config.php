@@ -21,11 +21,11 @@ function getConfiguredMailer() {
     $mailer->isSMTP();
     $mailer->Host = 'smtp.gmail.com';
     $mailer->SMTPAuth = true;
-    $mailer->Username = 'mohamadmustaqim02@gmail.com';
-    $mailer->Password = 'ojqkfzftzsqredbi';
+    $mailer->Username = 'YOUR_EMAIL@gmail.com';
+    $mailer->Password = 'YOUR_APP_PASSWORD'; //example password: ojqkfzftzsqredbi
     $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mailer->Port = 587;
-    $mailer->setFrom('railway@gmail.com', 'Railway Lost and Found');
+    $mailer->setFrom('YOUR_EMAIL@gmail.com', 'Railway Lost and Found');
     
     return $mailer;
 }
