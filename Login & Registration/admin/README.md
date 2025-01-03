@@ -2,11 +2,6 @@
 
 A web-based system for managing lost and found items in railway stations, featuring role-based access control and two-factor authentication.
 
-## System Requirements
-- PHP 8.2.12 or higher
-- MariaDB 10.4.32 or higher
-- XAMPP/Apache web server
-- PHPMailer library (for email functionality)
 
 ## Email Configuration
 
@@ -148,48 +143,6 @@ INSERT INTO users (
     'admin'
 );
 ```
-
-## Automated Maintenance
-
-### Database Cleanup Event
-The system includes an automated event that runs daily to:
-- Remove expired verification attempts
-- Clean up used verification codes
-- Delete expired password reset tokens
-- Remove used password reset entries
-
-## Security Features
-
-### Password Security
-- Passwords are hashed using bcrypt
-- Password reset tokens expire after 1 hour
-- Failed login attempts are tracked
-- Automatic cleanup of expired tokens
-
-### Two-Factor Authentication
-- 6-digit verification code
-- 10-minute expiration
-- One-time use codes
-- Rate limiting on verification attempts
-
-### Email Security Recommendations
-- Use dedicated service account for sending emails
-- Implement additional SMTP security measures
-- Monitor email sending logs
-- Consider professional email delivery services for production
-
-## Troubleshooting
-
-### Common Email Configuration Issues
-- SMTP connection failures
-- Authentication errors
-- Rate limiting
-- Incorrect app password
-
-### Debugging
-- Enable PHPMailer debug mode
-- Check PHP error logs
-- Verify network and firewall settings
 
 ---
 *Last Updated: January 4, 2025*
