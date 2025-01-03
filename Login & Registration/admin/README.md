@@ -19,9 +19,8 @@ A web-based system for managing lost and found items in railway stations, featur
 1. Go to your Google Account
 2. Navigate to Security > 2-Step Verification
 3. Scroll down and select "App passwords"
-4. Select "Mail" as the app
-5. Select "Other (Custom name)" as the device
-6. Generate a 16-character app password
+4. Create a new app name
+5. Generate a 16-character app password
 
 #### 2. Update Email Configuration
 Modify `config/email_config.php`:
