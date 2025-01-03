@@ -6,6 +6,41 @@ A web-based system for managing lost and found items in railway stations, featur
 - PHP 8.2.12 or higher
 - MariaDB 10.4.32 or higher
 - XAMPP/Apache web server
+- PHPMailer library (for email functionality)
+
+## Email Configuration
+
+### Important Security Notice
+⚠️ **CRITICAL**: Secure your email configuration to prevent unauthorized access.
+
+### Email Setup Requirements
+- Gmail account
+- App Password (recommended)
+- PHPMailer library installed
+
+### Configuring Email (PHPMailer)
+
+#### 1. Generate App Password
+1. Go to your Google Account
+2. Navigate to Security > 2-Step Verification
+3. Scroll down and select "App passwords"
+4. Select "Mail" as the app
+5. Select "Other (Custom name)" as the device
+6. Generate a 16-character app password
+
+#### 2. Update Email Configuration
+Modify `config/email_config.php`:
+```php
+$mailer->Username = 'YOUR_EMAIL@gmail.com';  // Your Gmail address
+$mailer->Password = 'YOUR_APP_PASSWORD';     // Generated app password
+$mailer->setFrom('SENDER_EMAIL@gmail.com', 'Railway Lost and Found');
+```
+
+#### 3. Recommended Security Practices
+- Never commit credentials to version control
+- Use environment variables or .env files
+- Rotate app passwords periodically
+- Limit email account permissions
 
 ## Database Setup
 
@@ -136,6 +171,25 @@ The system includes an automated event that runs daily to:
 - 10-minute expiration
 - One-time use codes
 - Rate limiting on verification attempts
+
+### Email Security Recommendations
+- Use dedicated service account for sending emails
+- Implement additional SMTP security measures
+- Monitor email sending logs
+- Consider professional email delivery services for production
+
+## Troubleshooting
+
+### Common Email Configuration Issues
+- SMTP connection failures
+- Authentication errors
+- Rate limiting
+- Incorrect app password
+
+### Debugging
+- Enable PHPMailer debug mode
+- Check PHP error logs
+- Verify network and firewall settings
 
 ---
 *Last Updated: January 4, 2025*
